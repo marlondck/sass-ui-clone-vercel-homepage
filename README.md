@@ -1,3 +1,5 @@
+<img src="./example.gif" width="600px"/>
+
 ## Install and run
 
 1. Open project folder in `VSCode`
