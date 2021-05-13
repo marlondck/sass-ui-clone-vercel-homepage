@@ -1,5 +1,6 @@
 main {
   max-width: 104.8rem;
+  padding: 5.6rem 2.4rem;
   display: flex;
   flex-direction: column;
   
@@ -17,6 +18,32 @@ main {
     line-height: 12.8rem;
     letter-spacing: -1.24rem; // - 12.4px
     color: var(--white);
+
+    span {
+      padding: 0 0.67rem;
+      filter: brightness(0) invert(1); // sempre inicia letra com a cor branca
+
+      /* Hack css, coloca o background na fonte */
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      animation: colorCicle 10s infinite ease-in-out;
+    }
+
+    span:nth-child(1) {
+      background-image: linear-gradient(90deg, #007cf0, #00dfd8);
+    }
+
+    span:nth-child(2) {
+      background-image: linear-gradient(90deg, #7928ca, #ff0080);
+      animation-delay: 3.33s;
+    }
+
+    span:nth-child(3) {
+      background-image: linear-gradient(90deg, #ff4d4d, #f9cb28);
+      animation-delay: 6.66s;
+    }
   }
 
   .buttons {
@@ -56,9 +83,25 @@ main {
   }
 
   h2 {
-    margin-top: 6.4rem;
+    margin: 6.4rem 0;
     font-size: 2rem;
     font-weight: 400;
     letter-spacing: -0.04rem;
+    text-align: center;
+  }
+}
+
+@keyframes colorCicle {
+  0% {
+    filter: brightness(0) invert(1);
+  }
+  11% {
+    filter: none;
+  }
+  33% {
+    filter: none;
+  }
+  55% {
+    filter: brightness(0) invert(1);
   }
 }

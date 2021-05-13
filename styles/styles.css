@@ -117,6 +117,7 @@ header .right .avatar {
 
 main {
   max-width: 104.8rem;
+  padding: 5.6rem 2.4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -151,6 +152,37 @@ main h1 {
   line-height: 12.8rem;
   letter-spacing: -1.24rem;
   color: var(--white);
+}
+
+main h1 span {
+  padding: 0 0.67rem;
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+  /* Hack css, coloca o background na fonte */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: colorCicle 10s infinite ease-in-out;
+          animation: colorCicle 10s infinite ease-in-out;
+}
+
+main h1 span:nth-child(1) {
+  background-image: -webkit-gradient(linear, left top, right top, from(#007cf0), to(#00dfd8));
+  background-image: linear-gradient(90deg, #007cf0, #00dfd8);
+}
+
+main h1 span:nth-child(2) {
+  background-image: -webkit-gradient(linear, left top, right top, from(#7928ca), to(#ff0080));
+  background-image: linear-gradient(90deg, #7928ca, #ff0080);
+  -webkit-animation-delay: 3.33s;
+          animation-delay: 3.33s;
+}
+
+main h1 span:nth-child(3) {
+  background-image: -webkit-gradient(linear, left top, right top, from(#ff4d4d), to(#f9cb28));
+  background-image: linear-gradient(90deg, #ff4d4d, #f9cb28);
+  -webkit-animation-delay: 6.66s;
+          animation-delay: 6.66s;
 }
 
 main .buttons {
@@ -190,10 +222,49 @@ main .buttons > button:hover {
 }
 
 main h2 {
-  margin-top: 6.4rem;
+  margin: 6.4rem 0;
   font-size: 2rem;
   font-weight: 400;
   letter-spacing: -0.04rem;
+  text-align: center;
+}
+
+@-webkit-keyframes colorCicle {
+  0% {
+    -webkit-filter: brightness(0) invert(1);
+            filter: brightness(0) invert(1);
+  }
+  11% {
+    -webkit-filter: none;
+            filter: none;
+  }
+  33% {
+    -webkit-filter: none;
+            filter: none;
+  }
+  55% {
+    -webkit-filter: brightness(0) invert(1);
+            filter: brightness(0) invert(1);
+  }
+}
+
+@keyframes colorCicle {
+  0% {
+    -webkit-filter: brightness(0) invert(1);
+            filter: brightness(0) invert(1);
+  }
+  11% {
+    -webkit-filter: none;
+            filter: none;
+  }
+  33% {
+    -webkit-filter: none;
+            filter: none;
+  }
+  55% {
+    -webkit-filter: brightness(0) invert(1);
+            filter: brightness(0) invert(1);
+  }
 }
 
 footer {
